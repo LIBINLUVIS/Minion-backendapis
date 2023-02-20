@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import ThresholdValue
 from rest_framework.settings import api_settings
 
-class RangeSerializer(serializers.ModelSerializer):
+class RangeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ThresholdValue
-        fields = '__all__'
+        fields = ('value','id')

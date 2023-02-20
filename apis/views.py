@@ -10,9 +10,9 @@ from .serializers import RangeSerializer
 @api_view(['GET'])
 def getrange(request):
     value=ThresholdValue.objects.all()
-    # serializer=RangeSerializer(value,many=True)
-    val={'id':'1','value':'-50'}
-    return Response(val)  
+    serializer=RangeSerializer(value,many=True)
+    # val={'id':'1','value':'-50'}
+    return Response(serializer.data)  
  
 
 
